@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { InforCoche } from 'src/app/models/inforcoche';
 import { InforCocheService } from 'src/app/services/inforcoche.service';
 
 @Component({
@@ -12,6 +13,7 @@ export class EditarInforcocheComponent implements OnInit {
  
   id: any;
   inforcocheForm: FormGroup;
+
 
   constructor(
     private router: Router,

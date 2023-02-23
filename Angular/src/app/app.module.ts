@@ -7,10 +7,9 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InsertarInforcocheComponent } from './components/insertar-inforcoche/insertar-inforcoche.component';
 import { ListarInforcocheComponent } from './components/listar-inforcoche/listar-inforcoche.component';
-import { InforCocheService } from './services/inforcoche.service';
-import { UsersService } from './services/users.service';
 import { LoginComponent } from './components/login/login.component';
 import { EditarInforcocheComponent } from './components/editar-inforcoche/editar-inforcoche.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +26,6 @@ import { EditarInforcocheComponent } from './components/editar-inforcoche/editar
     ReactiveFormsModule
   ],
   providers: [
-    InforCocheService,
-    UsersService
   ],
   bootstrap: [AppComponent],
 })

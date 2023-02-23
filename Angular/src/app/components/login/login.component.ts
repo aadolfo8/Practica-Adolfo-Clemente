@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     this.usersService.login(user).subscribe({
       next: (res) => {
         console.log(res);
-        localStorage.setItem('token', res.token);
+        localStorage.setItem('auth', res);
         this.router.navigate(['/listar-inforcoche']);
       },
       error: (e: Error) => {

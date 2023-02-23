@@ -1,7 +1,40 @@
 <div class="row justify-content-center mt-2">
-  <div class="col-md-4">
+  <div class="col-md-7">
     <h2 class="h2 mb-3">Modificar Coche</h2>
 
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr class="justify-content-center">
+            <th scope="col">Id</th>
+            <th scope="col">Imagen</th>
+            <th scope="col">Marca</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Año de Matriculacion</th>
+            <th scope="col">Etiqueta Ambiental</th>
+            <th scope="col">Peso</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">{{ inforcocheForm.value.idunico }}</th>
+            <td>
+              <img
+                src="{{ inforcocheForm.value.imagen }}"
+                width="150"
+                height="100"
+              />
+            </td>
+            <td>{{ inforcocheForm.value.marca }}</td>
+            <td>{{ inforcocheForm.value.nombre }}</td>
+            <td>{{ inforcocheForm.value.anyomatriculacion }}</td>
+            <td>{{ inforcocheForm.value.etiquetaambiental }}</td>
+            <td>{{ inforcocheForm.value.peso }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <hr />
     <form [formGroup]="inforcocheForm" (ngSubmit)="editarCoche()">
       <div class="form-group">
         <label>IdUnico</label>

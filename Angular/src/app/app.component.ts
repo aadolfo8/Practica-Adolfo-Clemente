@@ -7,5 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Coches';
-  prueba: boolean =  true;
+  autenticado: boolean = false;
+  hola: string | null = localStorage.getItem('auth');
+
+  constructor() {
+    if(localStorage.getItem('auth')){
+      this.autenticado = true;
+    }
+  }
 }

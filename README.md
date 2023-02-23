@@ -12,10 +12,10 @@
 > 4. nodemon
 > 5. @types/cors
 > 6. @types/jsonwebtoken
-> 7. @types/bcryptjs
+> 7. @types/bcryptjs       
 
 ---
-## Vista (Frontend)
+## Cliente (Frontend)
 
 > **La parte frontal se ha creado con Angular**    
 > Paquetes que se han utilizado para crear el servidor:
@@ -29,16 +29,3 @@
 > 1. bootstrap
 > 1. cors
 
-# ¿Cómo desplegar la aplicación?
-
-
-Desde la carpeta raiz del proyecto (Practica) ponemos por consola:
-````bash
-$ npm build
-````
-Este comando nos instalará todas las dependencias necesarias, tanto para Express como para Angular. A continuación ya podemos desplegar la aplicación por completo, desde la misma carpeta raiz del proyecto escribimos en la consola:
-````bash
-$ npm start
-````
-
-Automaticamente se abrirá un navegador

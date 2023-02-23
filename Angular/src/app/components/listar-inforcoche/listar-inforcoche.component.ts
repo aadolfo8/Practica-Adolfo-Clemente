@@ -25,7 +25,7 @@ export class ListarInforcocheComponent implements OnInit {
       this.inforCocheService.eliminarPorId(id).subscribe();
     }
     this.inforcoches.splice(0, this.inforcoches.length);
-    this.ngOnInit();
+    window.location.reload();
   }
 
   eliminarTodos() {
@@ -33,6 +33,7 @@ export class ListarInforcocheComponent implements OnInit {
       window.confirm('CUIDADO: si aceptas vas a borrar todos los coches!!!!!')
     ) {
       this.inforCocheService.eliminarTodos().subscribe();
+      window.location.reload();
     }
   }
 

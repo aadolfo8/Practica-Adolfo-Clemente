@@ -4,11 +4,12 @@
 
     <form [formGroup]="inforcocheForm" (ngSubmit)="insertarCoche()">
       <div class="form-group">
-        <label>IdUnico</label>
+        <label>Id Único</label>
         <input
-          class="form-control"
+          class="form-control bg-withe text-dark border-1 my-1 text-center"
           type="text"
           formControlName="idunico"
+          placeholder="Id Único"
           required
         />
       </div>
@@ -16,9 +17,10 @@
       <div class="form-group">
         <label>Nombre</label>
         <input
-          class="form-control"
+          class="form-control bg-withe text-dark border-1 my-1 text-center"
           type="text"
           formControlName="nombre"
+          placeholder="Nombre"
           required
         />
       </div>
@@ -26,9 +28,10 @@
       <div class="form-group">
         <label>Marca</label>
         <input
-          class="form-control"
+          class="form-control bg-withe text-dark border-1 my-1 text-center"
           type="text"
           formControlName="marca"
+          placeholder="Marca"
           required
         />
       </div>
@@ -36,8 +39,9 @@
       <div class="form-group">
         <label>Año de Matriculacion</label>
         <input
-          class="form-control"
+          class="form-control bg-withe text-dark border-1 my-1 text-center"
           type="number"
+          placeholder="Año de Matriculacion"
           formControlName="anyomatriculacion"
           required
         />
@@ -46,9 +50,10 @@
       <div class="form-group">
         <label>Etiqueta Ambiental</label>
         <input
-          class="form-control"
+          class="form-control bg-withe text-dark border-1 my-1 text-center"
           type="text"
           formControlName="etiquetaambiental"
+          placeholder="Etiqueta Ambiental"
           required
         />
       </div>
@@ -56,9 +61,10 @@
       <div class="form-group">
         <label>Peso</label>
         <input
-          class="form-control"
+          class="form-control bg-withe text-dark border-1 my-1 text-center"
           type="number"
           formControlName="peso"
+          placeholder="Peso"
           required
         />
       </div>
@@ -66,9 +72,10 @@
       <div class="form-group">
         <label>URL Imagen</label>
         <input
-          class="form-control"
+          class="form-control bg-withe text-dark border-1 my-1 text-center"
           type="text"
           formControlName="imagen"
+          placeholder="URL Imagen"
           required
         />
       </div>

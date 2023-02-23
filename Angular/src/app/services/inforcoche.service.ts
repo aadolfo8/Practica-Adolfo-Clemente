@@ -1,69 +1,58 @@
-import { ErrorHandler, Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { InforCoche } from '../models/inforcoche';
-import { Observable, throwError } from 'rxjs';
-import { map, catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+
+const httpOptions = {
+  headers: new HttpHeaders({ auth: `${localStorage.getItem('auth')}` }),
+};
 
 @Injectable({
   providedIn: 'root',
 })
 export class InforCocheService {
-
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-  
-  constructor(private http: HttpClient) {
-  }
 
-  obtenerTodos(){
-    return this.http.get<InforCoche[]>(`http://localhost:3000/obtener/todos`);
-    //.pipe(catchError(this.handleError));
-  }
+  constructor(private http: HttpClient) {}
 
-  obtenerPorId(idUnico: any): Observable<any>{
-    return this.http.get<InforCoche>(`http://localhost:3000/obtener/${idUnico}`);
-   /* {headers: this.httpHeaders}).pipe(
-      map((res:any) => {
-        return res.json() || {};
-      }),
-      catchError(this.handleError)
+  obtenerTodos() {
+    return this.http.get<InforCoche[]>(
+      `http://localhost:3000/obtener/todos`,
+      httpOptions
     );
- */
   }
 
-  instertar(coche: any): Observable<any>{
-    return this.http.post<InforCoche>(`http://localhost:3000/insertar`, coche);
-    //.pipe(catchError(this.handleError));
+  obtenerPorId(idUnico: any): Observable<any> {
+    return this.http.get<InforCoche>(
+      `http://localhost:3000/obtener/${idUnico}`,
+      httpOptions
+    );
   }
 
-  actualizar(idUnico: any, coche: any): Observable<any>{
-    return this.http.put<InforCoche>(`http://localhost:3000/actualizar/${idUnico}`, coche);
-   /* {headers: this.httpHeaders})
-    .pipe(catchError(this.handleError));
-    */
+  instertar(coche: any): Observable<any> {
+    return this.http.post<InforCoche>(
+      `http://localhost:3000/insertar`,
+      coche,
+      httpOptions
+    );
   }
 
-  eliminarPorId(idUnico: any): Observable<any>{
-    return this.http.delete(`http://localhost:3000/eliminar/${idUnico}`);
-    //.pipe(catchError(this.handleError));
+  actualizar(idUnico: any, coche: any): Observable<any> {
+    return this.http.put<InforCoche>(
+      `http://localhost:3000/actualizar/${idUnico}`,
+      coche,
+      httpOptions
+    );
   }
 
-  eliminarTodos(){
-    return this.http.delete(`http://localhost:3000/eliminar/todo`);
-    //.pipe(catchError(this.handleError));
+  eliminarPorId(idUnico: any): Observable<any> {
+    return this.http.delete(
+      `http://localhost:3000/eliminar/${idUnico}`,
+      httpOptions
+    );
   }
 
-/*   handleError(error: HttpErrorResponse) {
-    let errorMessage = '';
-    if (error.error instanceof ErrorEvent) {
-      // Handle client error
-      errorMessage = error.error.message;
-    } else {
-      // Handle server error
-      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
-    }
-    console.log(errorMessage);
-    return throwError(() => {
-      errorMessage;
-    });
-  } */
+  eliminarTodos() {
+    return this.http.delete(`http://localhost:3000/eliminar/todo`, httpOptions);
+  }
 }

@@ -32,8 +32,6 @@ export const login = async (req: Request, res: Response) => {
       { expiresIn: "30m" }
     );
 
-    console.log(token);
-
     return res.json(token);
   } catch (error) {
     return res.status(401).send();

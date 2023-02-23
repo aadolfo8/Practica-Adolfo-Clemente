@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "npm run build:ExpressTS && npm run build:Angular",
-    "build:Angular": "cd Angular && npm install && npm run build ",
-    "build:ExpressTS": "cd ExpressTS && npm install",
+    "build:Angular": "cd Angular && npm install && npm run build",
+    "build:ExpressTS": "cd ExpressTS && npm install && npm run build",
     "start": "concurrently \"npm run start:Angular\"  \"npm run start:ExpressTS\"",
     "start:Angular": "cd Angular && ng s -o",
     "start:ExpressTS": "cd ExpressTS && npm start",
