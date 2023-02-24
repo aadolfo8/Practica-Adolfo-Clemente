@@ -1,8 +1,27 @@
 # Practica de Adolfo Clemente Palacios
 
-### La practica se basa en una API REST que implementa todos los servicios CRUD que trabaja con datos de coches y tiene un LogIn con gestión de token JWT de autenticación
+### La practica se basa en una API REST que implementa todos los servicios CRUD que trabaja con datos de coches y tiene un LogIn con gestión de token JWT de autenticación.
+![](./imagen.jpg)
+
 ---
-## Servidor (Backend)
+
+## Software requerido 
+
+<div style="margin-left: auto;
+            margin-right: auto;
+            width: 30%">
+            
+| Nombre | Version
+|--------|------
+| NodeJs | 18.4.0
+|NPM | 9.4.2
+| Angular CLI | 15.1.5
+| PostgreSQL DB | 12.3
+
+</div>       
+
+---
+<h2 style="text-align: center"> Servidor (Backend) </h2>
 
 > **Todo el servidor a sido construdio con Typescript**    
 > Paquetes que se han utilizado para crear el servidor:
@@ -15,7 +34,8 @@
 > 7. @types/bcryptjs       
 
 ---
-## Cliente (Frontend)
+
+<h2 style="text-align: center">Cliente (Frontend) </h2>
 
 > **La parte frontal se ha creado con Angular**    
 > Paquetes que se han utilizado para crear el servidor:
@@ -28,4 +48,6 @@
 > 1. boostrap
 > 1. bootstrap
 > 1. cors
+
+
 

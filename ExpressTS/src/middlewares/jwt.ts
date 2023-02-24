@@ -18,7 +18,7 @@ const comprobarJwt = (req: Request, res: Response, next: NextFunction) => {
 
   const { userId, username } = jwtPayload;
   const newToken = jwt.sign({ userId, username }, process.env.TOKEN!, {
-    expiresIn: "1m",
+    expiresIn: process.env.TIEMPOEXP!,
   });
   res.setHeader("token", newToken);
 

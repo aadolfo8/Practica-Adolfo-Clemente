@@ -14,10 +14,18 @@ export class UsersService {
   constructor(private http: HttpClient) {}
 
   singin(user: any): Observable<any> {
-    return this.http.post<User>('http://localhost:3000/singin', user, httpOptions);
+    return this.http.post<User>(
+      'http://localhost:3000/singin',
+      user,
+      httpOptions
+    );
   }
 
   login(user: any): Observable<any> {
-    return this.http.post<any>('http://localhost:3000/login', user, httpOptions);
+    return this.http.post<any>(
+      'http://localhost:3000/login',
+      user,
+      httpOptions
+    );
   }
 }

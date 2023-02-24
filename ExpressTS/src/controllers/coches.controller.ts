@@ -7,15 +7,13 @@ export const obtenerTodos = async (req: Request, res: Response) => {
     const coches: InforCoche[] = await InforCoche.find();
 
     if (coches.length === 0) {
-      return res.status(404).send( "No hay coches" );
+      return res.status(404).send( "No hay coches que mostrar :(" );
     } else {
       return res.send(coches).status(200);
     }
   } catch (error) {
     if (error instanceof Error) {
-      return res.status(500).json({
-        message: error.message,
-      });
+      return res.status(500).send(error.message);
     }
   }
 };

@@ -9,7 +9,6 @@ import { InforCocheService } from 'src/app/services/inforcoche.service';
   styleUrls: ['./insertar-inforcoche.component.css'],
 })
 export class InsertarInforcocheComponent implements OnInit {
-  
   inforcocheForm: FormGroup;
   constructor(
     public formBuilder: FormBuilder,
@@ -30,11 +29,14 @@ export class InsertarInforcocheComponent implements OnInit {
   ngOnInit(): void {}
 
   insertarCoche(): any {
-
-    this.inforcocheService.instertar(this.inforcocheForm.value)
-    .subscribe(res => {
-        console.log(res);
+    this.inforcocheService.instertar(this.inforcocheForm.value).subscribe({
+      next: async (res) => {
+        await console.log(res);
         this.router.navigate(['/listar-inforcoche']);
+      },
+      error : (e: Error) =>{
+        console.log(e);
+      }
     });
   }
 }

@@ -10,12 +10,20 @@ import { InforCocheService } from 'src/app/services/inforcoche.service';
 export class ListarInforcocheComponent implements OnInit {
   inforcoches: InforCoche[] = [];
   idBuscado: any = '';
+  correcto: boolean = true;
+  mensaje: string =  '';
 
   constructor(private inforCocheService: InforCocheService) {}
 
   ngOnInit(): void {
-    this.inforCocheService.obtenerTodos().subscribe((res) => {
-      this.inforcoches = res;
+    this.inforCocheService.obtenerTodos().subscribe({
+      next: (res) => {
+        this.correcto =  true;
+        this.inforcoches = res;
+      },
+      error: (e: Error) => {
+        this.mensaje = e.message;
+      },
     });
   }
 

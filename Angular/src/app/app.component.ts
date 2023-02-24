@@ -8,10 +8,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Coches';
   autenticado: boolean = false;
-  hola: string | null = localStorage.getItem('auth');
+  hola: string | null = sessionStorage.getItem('auth');
 
   constructor() {
-    if(localStorage.getItem('auth')){
+    if(sessionStorage.getItem('auth')){
       this.autenticado = true;
     }
   }

@@ -3,29 +3,30 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { InforCoche } from '../models/inforcoche';
 import { Observable } from 'rxjs';
 
-const httpOptions = {
-  headers: new HttpHeaders({ auth: `${localStorage.getItem('auth')}` }),
-};
-
 @Injectable({
   providedIn: 'root',
 })
 export class InforCocheService {
-  httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
-
   constructor(private http: HttpClient) {}
 
-  obtenerTodos() {
+  getHeader() {
+    const httpOptions = {
+      headers: new HttpHeaders({ auth: `${sessionStorage.getItem('auth')}` }),
+    };
+    return httpOptions;
+  }
+
+  obtenerTodos(): Observable<any> {
     return this.http.get<InforCoche[]>(
       `http://localhost:3000/obtener/todos`,
-      httpOptions
+      this.getHeader()
     );
   }
 
   obtenerPorId(idUnico: any): Observable<any> {
     return this.http.get<InforCoche>(
       `http://localhost:3000/obtener/${idUnico}`,
-      httpOptions
+      this.getHeader()
     );
   }
 
@@ -33,7 +34,7 @@ export class InforCocheService {
     return this.http.post<InforCoche>(
       `http://localhost:3000/insertar`,
       coche,
-      httpOptions
+      this.getHeader()
     );
   }
 
@@ -41,18 +42,21 @@ export class InforCocheService {
     return this.http.put<InforCoche>(
       `http://localhost:3000/actualizar/${idUnico}`,
       coche,
-      httpOptions
+      this.getHeader()
     );
   }
 
   eliminarPorId(idUnico: any): Observable<any> {
     return this.http.delete(
       `http://localhost:3000/eliminar/${idUnico}`,
-      httpOptions
+      this.getHeader()
     );
   }
 
   eliminarTodos() {
-    return this.http.delete(`http://localhost:3000/eliminar/todo`, httpOptions);
+    return this.http.delete(
+      `http://localhost:3000/eliminar/todo`,
+      this.getHeader()
+    );
   }
 }

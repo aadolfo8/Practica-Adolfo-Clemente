@@ -1,10 +1,6 @@
 # ¿Cómo desplegar la aplicación?
 
-
-## 1. Configuración de base de datos
-
-
-## 2. Despliegue de la aplicación
+## 1. Despliegue de la aplicación
 #### Para que se puedan ejecutar los scripts tenemos que instalar la dependencia "concurrently" en el mismo proyecto raiz, para ello desde la consola instalamos las dependencias:
 ````bash
 $ npm i

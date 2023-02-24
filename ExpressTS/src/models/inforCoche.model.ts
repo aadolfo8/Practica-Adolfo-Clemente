@@ -15,16 +15,16 @@ export class InforCoche extends BaseEntity {
     @Column()
     marca: string
 
-    @Column({ type: "int", name :"anyomatriculacion" })
+    @Column({ type: "int" })
     anyomatriculacion: number
 
-    @Column({name: "etiquetaambiental"})
+    @Column()
     etiquetaambiental: string
 
     @Column()
     imagen: string
 
-    @Column({ type: "float" })
+    @Column()
     peso: number
 /*
     @CreateDateColumn({name: "createdat"})

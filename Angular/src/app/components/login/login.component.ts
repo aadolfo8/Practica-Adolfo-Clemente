@@ -35,10 +35,11 @@ export class LoginComponent implements OnInit {
   login(): void {
     let user: User = new User(this.user, this.pass);
     this.usersService.login(user).subscribe({
-      next: (res) => {
+      next: async (res) => {
         console.log(res);
-        localStorage.setItem('auth', res);
+        await sessionStorage.setItem('auth', res);
         this.router.navigate(['/listar-inforcoche']);
+
       },
       error: (e: Error) => {
         window.alert('Usuario o contraseña incorrectos');
